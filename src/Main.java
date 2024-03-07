@@ -1,11 +1,15 @@
+import animal.Cat;
+import animal.Dog;
+
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        SiamCat barsik = new SiamCat("Барсик", 5, true);
-        BritishCat tuzik = new BritishCat("Тузик",10, false);
-        barsik.sleep();
-        System.out.println(tuzik.age);
+        Cat barsik = new Cat("Барсик", 5, true);
+        Dog trezor = new Dog();
+        trezor.name = "Трезор";
 
-        Animal animal = new Animal();
-        System.out.println(animal.toString());
+
+        System.out.println(barsik.toString());
     }
 }
