@@ -1,5 +1,7 @@
 package animal;
 
+import java.util.Objects;
+
 public class Cat extends Animal {
     private final String name;
     private int age;
@@ -7,10 +9,25 @@ public class Cat extends Animal {
     private static int catsPopulation = 1000;
 
     @Override
+    public boolean equals(Cat cat) {
+        if (
+                this.name.equals(cat.name) ||
+                        this.age == cat.age ||
+                        this.softness || cat.softness) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public String toString() {
         String softnessStr;
-        if (this.softness) softnessStr = "мягкий";
-        else softnessStr = "жоский";
+        if (this.softness) {
+            softnessStr = "мягкий";
+        } else {
+            softnessStr = "жоский";
+        }
         return "Котика зовут " + this.name + ". Ему " + this.age + ". Он " + softnessStr;
     }
 
@@ -28,7 +45,7 @@ public class Cat extends Animal {
     }
 
     public void setAge(int age) {
-        if (age<=0) System.out.println("Ошибка! Возраст должен быть больше 0");
+        if (age <= 0) System.out.println("Ошибка! Возраст должен быть больше 0");
         if (age < this.age) System.out.println("Котик может только взрослеть!");
         else this.age = age;
     }

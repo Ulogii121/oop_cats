@@ -1,22 +1,26 @@
 package animal;
 
-public class Dog extends Animal {
+public class Dog extends Animal implements Runnable, Swimmable {
     public String name;
+
+    @Override
+    public boolean equals(Cat cat) {
+        return false;
+    }
 
     @Override
     public void voice() {
         System.out.println("Гавкает");
     }
 
+
+    @Override
+    public void swim() {
+
+    }
+
+    @Override
     public void run() {
-        System.out.println(this.name + " бегает");
-    }
 
-    public void run(int km) {
-        System.out.println(this.name + " пробежал уже " + km + " километра");
-    }
-
-    public String run(String place) {
-        return this.name + " бегает " + place;
     }
 }
